@@ -1,4 +1,10 @@
 !*.c
+Procesos/*
+!Procesos/*.c
+
+EdoProcesos/*
+!EdoProcesos/*.c
+
 socketsC/*
 !socketsC/*.c
 !Makefile
