@@ -1,4 +1,4 @@
-*
 !*.c
+socketsC/*.c
 !socketsC/*.c
 !Makefile
