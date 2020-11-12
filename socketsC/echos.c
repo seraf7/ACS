@@ -19,8 +19,10 @@ int main(void){
 
     local.sun_family = AF_UNIX;
     strcpy(local.sun_path, SOCK_PATH);
+    //Desliga el socket en caso de haberse usado previamente
     unlink(local.sun_path);
     len = strlen(local.sun_path) + sizeof(local.sun_family);
+    //Liga el socket a un archivo y valida exito de la operacion
     if(bind(s, (struct sockaddr *)&local, len) == -1){
         perror("bind");
         exit(1);
@@ -43,12 +45,15 @@ int main(void){
         done = 0;
 
         do{
+            //Realiza la recepción de datos
             n = recv(s2, str, 100, 0);
-            if (n <= 0){
+            if (n <= 0){    //Valida si ocurrión error en recepción
                 if (n < 0) perror("recv");
                     done = 1;
             }
+            //Imprime cantidad de bytes y cadena recibida
             printf("str %d = %s\n",n,str);
+            //Valida haber recibido exitosamente un mensaje anteriormente
             if (!done)
                 if (send(s2, str, n, 0) < 0){
                     perror("send");
