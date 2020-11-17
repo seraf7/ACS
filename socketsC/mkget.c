@@ -1,3 +1,5 @@
+//Ejecucion requiere argumentos en terminal
+//Ejemplo: ./ejecutable URL
 #include <stdlib.h>
 #include <stdio.h>
 #include <netinet/in.h>
@@ -21,7 +23,7 @@ void get_home_page (int socket_fd){
     while (1){
         number_characters_read = read (socket_fd, buffer, 10000);
         if (number_characters_read == 0)
-        return;
+            return;
 
         /* Write the data to standard output. */
         fwrite (buffer, sizeof (char), number_characters_read, stdout);
@@ -39,10 +41,10 @@ int main (int argc, char* const argv[]){
     /* Convert from strings to numbers. */
     hostinfo = gethostbyname (argv[1]);
     if (hostinfo == NULL)
-    return 1;
+        return 1;
     else
-    name.sin_addr = *((struct in_addr *) hostinfo->h_addr);
-    /* Web servers use port 80. */
+        name.sin_addr = *((struct in_addr *) hostinfo->h_addr);
+    /* Web servers use port 80. htons, convierte el numero binario 80 a a bytes*/
     name.sin_port = htons (80);
     /* Connect to the Web server */
     if (connect (socket_fd, (struct sockaddr *)&name, sizeof (struct sockaddr_in)) == -1){
