@@ -1,3 +1,6 @@
+//Requiere parametros de ejecucion
+//Ejemplo: ./ejecutable URL
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

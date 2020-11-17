@@ -1,3 +1,6 @@
+//Requiere parametros de ejecucion
+//Ejemplo: ./ejecutable rutaArchivo
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

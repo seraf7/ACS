@@ -1,3 +1,7 @@
+//Requiere parametros de ejecucion
+//Ejemplo: ./ejecutable rutaArchivo "Mensaje"
+//La ruta debe ser igual a la usada por el servidor
+
 #include <stdio.h>
 #include <string.h>
 #include <sys/socket.h>
