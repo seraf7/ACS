@@ -1,4 +1,6 @@
 !*.c
+!*.java
+
 Procesos/*
 !Procesos/*.c
 
@@ -7,4 +9,8 @@ EdoProcesos/*
 
 socketsC/*
 !socketsC/*.c
+
+socketsJava/*
+!socketsJava/*.java
+
 !Makefile
