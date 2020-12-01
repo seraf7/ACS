@@ -1,3 +1,5 @@
+//Requiere parametros de ejecucion
+//Ejemplo: java IPservidor
 import java.net.*;
 import java.io.*;
 
