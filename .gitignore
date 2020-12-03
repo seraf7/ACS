@@ -13,4 +13,6 @@ socketsC/*
 socketsJava/*
 !socketsJava/*.java
 
+socketsJavaHilos/*.class
+
 !Makefile
