@@ -78,6 +78,7 @@ public class ServidorSSH extends Thread{
                 e.printStackTrace();
             }
         }
-        return lectura;
+        //Retorna cadena obtenida, excluye el ultimo caracter
+        return lectura.substring(0, lectura.length()-1);
     }
 }
