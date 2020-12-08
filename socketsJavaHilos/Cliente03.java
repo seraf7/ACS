@@ -1,18 +1,18 @@
+//Requiere parámetros de compilación
+//Ejemplo java Ejecutable IPservidor
+//Al enviar el mensaje bye, se termina la comunicacion
 import java.net.*;
 import java.io.*;
 
-public class Cliente03
-{
-	public static void main(String a[])
-	{
+public class Cliente03{
+	public static void main(String a[]){
 		Socket socket = null;
 		// Peticion es lo que envia el Cliente
 		String peticion = "";
 		// Respuesta es lo que le respondo al Cliente
 		String respuesta = "";
 
-		try
-		{
+		try{
 			System.out.println("Me conecto al puerto 8000 del servidor");
 			socket = new Socket(a[0],8000);
 			// Como ya hay socket, obtengo los flujos asociados a este
@@ -20,8 +20,7 @@ public class Cliente03
 			DataOutputStream dos = new DataOutputStream( socket.getOutputStream() );
 			// Ya que me conecte con el Servidor, debo leer del teclado para despues eso mismo enviarlo al Servidor
 			BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
-			while( !respuesta.equals( "bye" ) )
-			{
+			while( !respuesta.equals( "bye" ) ){
 				peticion = br.readLine();
 				// Como yo escribo la peticion a la red,
 				// el Servidor debe leer de la red
@@ -35,8 +34,7 @@ public class Cliente03
 			dis.close();
 			socket.close();
 		}
-		catch(IOException e)
-		{
+		catch(IOException e){
 			System.out.println("java.io.IOException generada");
 			e.printStackTrace();
 		}
