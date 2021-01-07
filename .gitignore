@@ -16,5 +16,6 @@ socketsJava/*
 socketsJavaHilos/*.class
 
 socketsCriptografia/*.class
+socketsCriptografia/*.ser
 
 !Makefile
