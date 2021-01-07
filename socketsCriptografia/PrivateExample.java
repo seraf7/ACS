@@ -37,7 +37,8 @@ public class PrivateExample{
         byte[] cipherText = cifrar.doFinal(textoPlano);
         //Obtencion del mensaje encriptado
         System.out.println( "El argumento ENCRIPTADO es:" );
-        System.out.println( new String(cipherText, "UTF8") );
+        //Se puede pasar como segundo argumento el conjunto de carcateres new String(cipherText, "UTF8")
+        System.out.println( new String(cipherText) );
         System.out.println( "El argumento ENCRIPTADO pasado a bytes y a bits es:" );
         bytesToBits( cipherText );
         System.out.println( "La longitud es:" + cipherText.length);
